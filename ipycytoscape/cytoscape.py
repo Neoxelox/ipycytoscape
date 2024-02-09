@@ -984,6 +984,13 @@ class CytoscapeWidget(DOMWidget):
         """
         self.send({"name": "layout"})
 
+    def center(self, node):
+        """
+        Centers the graph on the provided node.
+        https://js.cytoscape.org/#cy.center
+        """
+        self.send({"name": "center", "node": node.data["id"]})
+
     def set_style(self, style):
         """
         Sets the layout of the current object. Change the parameters

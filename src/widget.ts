@@ -82,6 +82,12 @@ export class CytoscapeModel extends DOMWidgetModel {
         view.cytoscape_obj.layout(this.get('cytoscape_layout')).run();
       });
     }
+  
+    else if (command.name === 'center') {
+      this.forEachView((view) => {
+        view.cytoscape_obj.center(view.cytoscape_obj.$(command.node));
+      });
+    }
   }
 
   private forEachView(callback: (view: CytoscapeView) => void) {
