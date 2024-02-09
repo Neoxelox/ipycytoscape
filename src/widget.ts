@@ -77,6 +77,8 @@ export class CytoscapeModel extends DOMWidgetModel {
   };
 
   private processMessage(command: any, buffers: any) {
+    console.log(command);
+
     if (command.name === 'layout') {
       this.forEachView((view) => {
         view.cytoscape_obj.layout(this.get('cytoscape_layout')).run();
